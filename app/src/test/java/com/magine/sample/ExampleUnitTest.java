@@ -1,4 +1,4 @@
-package com.magine.sample.samplemagine;
+package com.magine.sample;
 
 import org.junit.Test;
 
