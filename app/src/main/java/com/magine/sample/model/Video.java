@@ -1,12 +1,13 @@
 package com.magine.sample.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.magine.sample.service.MagineApi;
 
 public class Video {
     private String title;
     private String subtitle;
     private String studio;
-    private String thumburl;
+    private String thumb;
     @SerializedName("image-480x270")
     private String mSmallImageUrl;
     @SerializedName("image-780x1200")
@@ -25,14 +26,14 @@ public class Video {
     }
 
     public String getThumbUrl() {
-        return thumburl;
+        return MagineApi.ENDPOINT + thumb;
     }
 
     public String getSmallImageUrl() {
-        return mSmallImageUrl;
+        return MagineApi.ENDPOINT + mSmallImageUrl;
     }
 
     public String getFullImageUrl() {
-        return mFullImageUrl;
+        return MagineApi.ENDPOINT + mFullImageUrl;
     }
 }
