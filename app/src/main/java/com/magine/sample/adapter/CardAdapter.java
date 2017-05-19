@@ -15,6 +15,10 @@ import com.magine.sample.model.Video;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * List adapter with view holder class
+ * Binding raw data to particular UI controls by rows
+ */
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     private List<Video> mItems;
     private Context mContext;
