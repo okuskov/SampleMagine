@@ -1,6 +1,5 @@
 package com.magine.sample.adapter;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,11 +20,9 @@ import java.util.List;
  */
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     private List<Video> mItems;
-    private Context mContext;
 
-    public CardAdapter(Context context) {
+    public CardAdapter() {
         super();
-        mContext = context;
         mItems = new ArrayList<>();
     }
 
@@ -49,7 +46,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         Video item = mItems.get(i);
-        Glide.with(mContext)
+        Glide.with(viewHolder.itemView.getContext())
                 .load(item.getThumbUrl())
                 .placeholder(R.drawable.default_placeholder)
                 .error(R.drawable.default_placeholder)
@@ -57,7 +54,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 .into(viewHolder.thumb);
         viewHolder.title.setText(item.getTitle());
         viewHolder.studio.setText(item.getStudio());
-        viewHolder.subtitle.setText(item.getSubTitle());
     }
 
     @Override
@@ -69,14 +65,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         public ImageView thumb;
         public TextView title;
         public TextView studio;
-        public TextView subtitle;
 
         public ViewHolder(View itemView) {
             super(itemView);
             thumb = (ImageView) itemView.findViewById(R.id.imgThumb);
             title = (TextView) itemView.findViewById(R.id.txtTitle);
             studio = (TextView) itemView.findViewById(R.id.txtStudio);
-            subtitle = (TextView) itemView.findViewById(R.id.txtSubtitle);
         }
     }
 }

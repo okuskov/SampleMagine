@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         mProgressBar = (ProgressBar) findViewById(R.id.prgIndicator);
         mImgError = (ImageView) findViewById(R.id.imgError);
 
-        mCardAdapter = new CardAdapter(this);
+        mCardAdapter = new CardAdapter();
 
         mLstVideos = (RecyclerView) findViewById(R.id.lstVideos);
         mLstVideos.setHasFixedSize(true);
@@ -68,16 +68,16 @@ public class MainActivity extends AppCompatActivity {
     private void showMessage(@StringRes int message) {
         mImgError.setVisibility(View.VISIBLE);
 
-        final Snackbar mSnackbar = Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_INDEFINITE);
-        mSnackbar.setAction(R.string.reload, new View.OnClickListener() {
+        final Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_INDEFINITE);
+        snackbar.setAction(R.string.reload, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSnackbar.dismiss();
+                snackbar.dismiss();
                 fetchVideoList();
             }
         });
-        mSnackbar.setActionTextColor(Color.RED);
-        mSnackbar.show();
+        snackbar.setActionTextColor(Color.RED);
+        snackbar.show();
     }
 
     /**

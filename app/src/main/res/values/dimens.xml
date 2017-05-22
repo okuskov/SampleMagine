@@ -1,3 +1,15 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <!-- padding/margin-->
+    <dimen name="screenPadding">16dp</dimen>
+    <dimen name="contentPadding">8dp</dimen>
+
+    <!-- item size -->
+    <dimen name="errorImageWidth">100dp</dimen>
+    <dimen name="errorImageHeight">100dp</dimen>
+    <dimen name="videoThumbWidth">100dp</dimen>
+    <dimen name="videoThumbHeight">100dp</dimen>
+
+    <!-- text size -->
+    <dimen name="headerTextSize">18sp</dimen>
+    <dimen name="regularTextSize">12sp</dimen>
 </resources>

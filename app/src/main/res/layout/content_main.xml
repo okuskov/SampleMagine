@@ -21,8 +21,8 @@
 
     <ImageView
         android:id="@+id/imgError"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/errorImageWidth"
+        android:layout_height="@dimen/errorImageHeight"
         android:src="@drawable/ic_error"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"

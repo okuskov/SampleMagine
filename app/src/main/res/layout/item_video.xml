@@ -3,15 +3,14 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp"
-    android:background="#D5D5D1"
-    android:orientation="vertical">
+    android:background="@color/bgVideoItem"
+    android:orientation="vertical"
+    android:padding="@dimen/screenPadding">
 
     <android.support.v7.widget.CardView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        card_view:contentPadding="5dp">
+        card_view:contentPadding="@dimen/contentPadding">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,9 +20,9 @@
 
             <ImageView
                 android:id="@+id/imgThumb"
-                android:layout_width="100dp"
-                android:padding="10dp"
-                android:layout_height="100dp" />
+                android:layout_width="@dimen/videoThumbWidth"
+                android:layout_height="@dimen/videoThumbHeight"
+                android:padding="@dimen/contentPadding" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,19 +33,14 @@
                     android:id="@+id/txtTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/headerTextSize" />
 
                 <TextView
                     android:id="@+id/txtStudio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp" />
+                    android:textSize="@dimen/regularTextSize" />
 
-                <TextView
-                    android:id="@+id/txtSubtitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp" />
             </LinearLayout>
 
         </LinearLayout>
